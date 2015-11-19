@@ -1,7 +1,11 @@
 {
    "name": "bililiteRange",
    "version": "2.5.1",
-   "main": "bililiteRange.js",
+   "main": [
+   		"bililiteRange.js",
+   		"jquery.sendkeys.js",
+   		"jquery.autosuggest.js"
+   ],
    "ignore": [
       "test/**/*"
    ]
