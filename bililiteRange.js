@@ -215,14 +215,14 @@ Range.prototype = {
 	top: function(){
 		return this._nativeTop(this._nativeRange(this.bounds()));
 	},
-	scrollIntoView: function(scroller){
+	scrollIntoView: function(scroller, offset){
 		var top = this.top();
 		// scroll into position if necessary
-		if (this._el.scrollTop > top || this._el.scrollTop+this._el.clientHeight < top){
+		if (this._el.scrollTop > top || (this._el.scrollTop+this._el.clientHeight < top + (offset || 0)) ){
 			if (scroller){
 				scroller.call(this._el, top);
 			}else{
-				this._el.scrollTop = top;
+				this._el.scrollTop = top + (offset || 0);
 			}
 		}
 		return this;
